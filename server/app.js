@@ -2,11 +2,11 @@ const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const PORT = 5005;
-const cohorts = require("./cohorts.json")
-require ("./db/index")
-const students = require("./students.json")
-const CohortModel = require("./models/User.model")
-const StudentModel = require("./models/User.model")
+const cohorts = require("./cohorts.json");
+require("./db/index.js)");
+const students = require("./students.json");
+const CohortModel = require("./models/User.model");
+const StudentModel = require("./models/User.model");
 const cors = require("cors");
 
 // STATIC DATA
@@ -44,4 +44,3 @@ app.get("/api/students", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-
