@@ -47,5 +47,5 @@ const StudentSchema = new Schema({
   projects: Array,
 });
 
-const StudentModel = model("students", StudentSchema);
-module.exports = StudentModel;
+const StudentsModel = model("students", StudentSchema);
+module.exports = StudentsModel;
