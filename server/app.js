@@ -5,8 +5,10 @@ const PORT = 5005;
 const cohorts = require("./cohorts.json");
 require("./db/index.js");
 const students = require("./students.json");
-const CohortModel = require("./models/User.model");
-const StudentModel = require("./models/User.model");
+const cohortsRoutes = require("./routes/cohorts.routes.js");
+const CohortModel = require("./models/Students.model.js");
+const studentsRoutes = require("./routes/students.routes.js");
+const StudentsModel = require("./models/Students.model.js");
 const cors = require("cors");
 
 // STATIC DATA
@@ -19,12 +21,12 @@ const app = express();
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
 // ...
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
 
 // ROUTES - https://expressjs.com/en/starter/basic-routing.html
 // Devs Team - Start working on the routes here:
@@ -39,6 +41,10 @@ app.get("/api/cohorts", (req, res) => {
 app.get("/api/students", (req, res) => {
   res.json(students);
 });
+
+// Routes imported
+app.use("/api/students", studentsRoutes);
+app.use("/api/cohorts", cohortsRoutes);
 
 // START SERVER
 app.listen(PORT, () => {
