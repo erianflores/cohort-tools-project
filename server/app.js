@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const PORT = 5005;
 const cohorts = require("./cohorts.json");
-require("./db/index");
+require("./db/index.js");
 const students = require("./students.json");
 const CohortModel = require("./models/User.model");
 const StudentModel = require("./models/User.model");
