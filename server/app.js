@@ -35,12 +35,12 @@ app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/docs.html");
 });
 
-app.get("/api/cohorts", (req, res) => {
-  res.json(cohorts);
-});
-app.get("/api/students", (req, res) => {
-  res.json(students);
-});
+// app.get("/api/cohorts", (req, res) => {
+//   res.json(cohorts);
+// });
+// app.get("/api/students", (req, res) => {
+//   res.json(students);
+// });
 
 // Routes imported
 app.use("/api/students", studentsRoutes);
