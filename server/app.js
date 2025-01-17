@@ -9,6 +9,7 @@ const cohortsRoutes = require("./routes/cohorts.routes.js");
 const CohortModel = require("./models/Students.model.js");
 const studentsRoutes = require("./routes/students.routes.js");
 const StudentsModel = require("./models/Students.model.js");
+const UserModel = require("./models/User.model.js");
 const cors = require("cors");
 
 // STATIC DATA
