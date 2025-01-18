@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 //create a function to check the token
-function isAuthenticated(req, res, next) {
+function authenticateUser(req, res, next) {
   console.log("in the authentication middleware function");
   //check the headers for the token
   if (
@@ -21,4 +21,4 @@ function isAuthenticated(req, res, next) {
 }
 
 //export the function so we can use it on other files
-module.exports = { isAuthenticated };
+module.exports = authenticateUser;
