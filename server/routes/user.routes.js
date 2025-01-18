@@ -6,26 +6,6 @@ const jwt = require("jsonwebtoken");
 const UserModel = require("../models/User.model");
 const authenticateUser = require("../middlewares/auth.middleware");
 
-<<<<<<< HEAD
-router.post("/signup", async (req, res) => {
-  console.log("here is the req.body", req.body);
-  try {
-    const salt = bcryptjs.genSaltSync(12);
-    const hashedPassword = bcryptjs.hashSync(req.body.password, salt);
-    const hashedUser = {
-      username: req.body.username,
-      email: req.body.email,
-      password: hashedPassword,
-    };
-    const createdUser = await userModel.create(hashedUser);
-    console.log("user created, nice work", createdUser);
-    res.status(201).json({ message: "user created", createdUser });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Error creating user" });
-  }
-  // res.status(200).json({message: "made ir here, nice work"})
-=======
 
 router.post('/signup', async(req, res, ) => {
     console.log("here is the req.body", req.body);
@@ -45,7 +25,6 @@ router.post('/signup', async(req, res, ) => {
         res.status(500).json({message: "Error creating user"});
     }
 
->>>>>>> 3cc815f (whatever)
 });
 
 router.post("/login", async (req, res) => {
@@ -76,19 +55,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-router.get("/verify", authenticateUser, async (req, res) => {
-  console.log("verify route", req.payload);
-  res.status(200).json({ message: "token is valid", currentUser: req.payload });
-});
-
-module.exports = router;
-
-// const { email, password, name } = req.body;
-// if (email === '' || password === '' || name === '') {
-//     res.status(400).json({ message: "Provide email, password and name" });
-//     return;
-=======
   router.get('/verify', authenticateUser, async(req,res) => {
     console.log("verify route", req.payload);
     res.status(200).json({ message: "token is valid" , currentUser: req.payload});
@@ -98,7 +64,6 @@ module.exports = router;
     // if (email === '' || password === '' || name === '') {
     //     res.status(400).json({ message: "Provide email, password and name" });
     //     return;
->>>>>>> 3cc815f (whatever)
 //       }
 //       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 //       if (!emailRegex.test(email)) {
