@@ -12,7 +12,7 @@ const studentsRoutes = require("./routes/students.routes.js");
 const StudentsModel = require("./models/Students.model.js");
 const UserModel = require("./models/User.model.js");
 const cors = require("cors");
-const authRoutes = require("./routes/user.routes.js");  
+const authRoutes = require("./routes/user.routes.js");
 
 // STATIC DATA
 // Devs Team - Import the provided files with JSON data of students and cohorts here:
@@ -30,7 +30,7 @@ app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/auth", authRoutes);     
+app.use("/auth", authRoutes);
 
 // ROUTES - https://expressjs.com/en/starter/basic-routing.html
 // Devs Team - Start working on the routes here:
@@ -49,11 +49,11 @@ app.get("/docs", (req, res) => {
 // Routes imported
 app.use("/api/students", studentsRoutes);
 app.use("/api/cohorts", cohortsRoutes);
-app.use("/auth", authRoutes); 
+app.use("/auth", authRoutes);
 
 // START SERVER
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
-     //  <== IMPORT
+//  <== IMPORT

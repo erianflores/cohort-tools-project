@@ -8,6 +8,7 @@ router.post("/", async (req, res) => {
     const student = await studentsModel.create(req.body);
     res.status(201).json(student);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: error.message });
   }
 });

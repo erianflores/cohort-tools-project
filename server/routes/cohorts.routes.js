@@ -8,6 +8,7 @@ router.post("/", async (req, res) => {
     const cohort = await cohortsModel.create(req.body);
     res.status(201).json(cohort);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ error: error.message });
   }
 });
